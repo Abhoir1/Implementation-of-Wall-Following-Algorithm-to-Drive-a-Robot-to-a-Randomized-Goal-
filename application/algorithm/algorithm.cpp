@@ -27,8 +27,8 @@ void rwa2group8::algorithm::init_outer_walls(){
         Simulator ::setWall(15, j, 'e');
     }
 }
-void rwa2group8::algorithm::generate_goal()
-{ 
+
+void rwa2group8::algorithm::generate_goal() { 
     std ::cerr << "Generating the goal " << '\n';
     int x_coordinate, y_coordinate;
     int max = 15;
@@ -60,7 +60,7 @@ void rwa2group8::algorithm::generate_goal()
     goal.second = y_coordinate;
 }
 
-void rwa2group8::algorithm::set_front_wall(int x, int y, char dir){
+void rwa2group8::algorithm::set_front_wall(int x, int y, char dir) {
      if (Simulator::wallFront()){
         if (dir == 'n')
         {
@@ -81,9 +81,8 @@ void rwa2group8::algorithm::set_front_wall(int x, int y, char dir){
     }
 }
 
-void rwa2group8::algorithm::set_left_wall(int x, int y, char dir){
+void rwa2group8::algorithm::set_left_wall(int x, int y, char dir) {
      if (Simulator::wallLeft())
-    {
         if (dir == 'n')
         {
             Simulator::setWall(x, y, 'w');
@@ -100,7 +99,7 @@ void rwa2group8::algorithm::set_left_wall(int x, int y, char dir){
         {
             Simulator::setWall(x, y, 's');
         }
-    }
+    
 }
 
 void rwa2group8::algorithm::set_right_wall(int x, int y, char dir){
