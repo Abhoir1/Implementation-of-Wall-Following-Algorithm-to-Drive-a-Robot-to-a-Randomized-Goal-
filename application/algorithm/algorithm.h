@@ -22,7 +22,7 @@
 
 namespace rwa2group8 {
     /**
-     * @brief The class algorithm includes the attributes and methods for setting the iuter walls, generating the goal and executing the searach algorithm
+     * @brief The class algorithm includes the attributes and methods for setting the outer walls, generating the goal and executing the search algorithm
      */
     class algorithm{
     public:
