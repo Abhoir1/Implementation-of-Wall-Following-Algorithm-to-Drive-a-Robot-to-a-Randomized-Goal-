@@ -2,11 +2,25 @@
 #include "../robot/robot.h"
 #include "algorithm.h"
 
+/**
+ * @file algorithm.cpp
+ * @author Sarin Ann Mathew (sarinann@umd.edu)
+ * @author Aditi Bhoir      (abhoir@umd.edu)
+ * @author Aditya Chaugule  (aditya97@umd.edu)
+ * @brief Implementation of class algorithm for initializing outer walls, generating goal and executing search algorithm
+ * @version 0.1
+ * @date 2022-11-07
+ * 
+ * @copyright Copyright (c) 2022
+ */
+
 #include <vector>
 #include <array>
 #include <time.h>
 #include <cstdlib>
 
+
+// Method for initializing outer walls
 void rwa2group8::algorithm::init_outer_walls(){
     std ::cerr << "Initializing the outer walls" << '\n';
     int i;
@@ -28,6 +42,7 @@ void rwa2group8::algorithm::init_outer_walls(){
     }
 }
 
+//Method to generate a random goal on each run
 void rwa2group8::algorithm::generate_goal() { 
     std ::cerr << "Generating the goal " << '\n';
     int x_coordinate, y_coordinate;
@@ -60,6 +75,7 @@ void rwa2group8::algorithm::generate_goal() {
     goal.second = y_coordinate;
 }
 
+// Method to set the front wall
 void rwa2group8::algorithm::set_front_wall(int x, int y, char dir) {
      if (Simulator::wallFront()){
         if (dir == 'n')
@@ -81,6 +97,7 @@ void rwa2group8::algorithm::set_front_wall(int x, int y, char dir) {
     }
 }
 
+//Method to set the left wall
 void rwa2group8::algorithm::set_left_wall(int x, int y, char dir) {
      if (Simulator::wallLeft())
         if (dir == 'n')
@@ -102,8 +119,9 @@ void rwa2group8::algorithm::set_left_wall(int x, int y, char dir) {
     
 }
 
+//Method to set the right wall
 void rwa2group8::algorithm::set_right_wall(int x, int y, char dir){
-     if (Simulator::wallRight()){
+     if (Simulator::wallRight()) {
         if (dir == 'n')
         {
             Simulator::setWall(x, y, 'e');
@@ -123,6 +141,7 @@ void rwa2group8::algorithm::set_right_wall(int x, int y, char dir){
     }
 }
 
+//Algorithm for left handed approach to follow the wall
 void rwa2group8::algorithm::follow_wall_left(){
     std::cerr << "Left_Wall Following Algorithm"<<std::endl;
     auto robot = std::make_unique<rwa2group8::Robot>(); 
@@ -335,6 +354,7 @@ void rwa2group8::algorithm::follow_wall_left(){
     }
 }
 
+//Algorithm for right handed approach to follow the wall
 void rwa2group8::algorithm::follow_wall_right(){
     std::cerr << "Right_Wall Following Algorithm"<<std::endl;
     auto robot = std::make_unique<rwa2group8::Robot>(); 
@@ -522,6 +542,8 @@ void rwa2group8::algorithm::follow_wall_right(){
     }
 }
 
+
+//Method to set the outer walls, generate the goal and follow left handed approach 
 void rwa2group8::algorithm::run_left()
 {
     init_outer_walls();
@@ -529,6 +551,7 @@ void rwa2group8::algorithm::run_left()
     follow_wall_left();    
 }
 
+//Method to set the outer walls, generate the goal and follow right handed approach 
 void rwa2group8::algorithm::run_right()
 {
     init_outer_walls();
