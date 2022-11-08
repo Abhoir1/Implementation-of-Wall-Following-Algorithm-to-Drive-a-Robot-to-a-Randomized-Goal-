@@ -1,0 +1,6 @@
+<map id="application/robot/robot.h" name="application/robot/robot.h">
+<area shape="rect" id="node1" title="The class &#39;Robot&#39; includes all the functions required to get the direction and position of the robot ..." alt="" coords="179,5,361,32"/>
+<area shape="rect" id="node2" href="$algorithm_8cpp.html" title="Implementation of class algorithm for initializing outer walls, generating goal and executing search ..." alt="" coords="5,80,167,121"/>
+<area shape="rect" id="node3" href="$main_8cpp.html" title="Main Function." alt="" coords="191,87,349,114"/>
+<area shape="rect" id="node4" href="$robot_8cpp.html" title="Implementation of the attributes defined in Class &#39;Robot&#39;." alt="" coords="374,87,571,114"/>
+</map>
