@@ -20,7 +20,7 @@
 #include <cstdlib>
 
 
-// Method for initializing outer walls
+// Method for initializing the outer walls
 void rwa2group8::algorithm::init_outer_walls(){
     std ::cerr << "Initializing the outer walls" << '\n';
     int i;
