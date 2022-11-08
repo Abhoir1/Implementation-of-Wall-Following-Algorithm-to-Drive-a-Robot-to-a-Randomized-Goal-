@@ -69,7 +69,7 @@ void rwa2group8::algorithm::generate_goal() {
         y_coordinate = (rand() > RAND_MAX / 2) ? 0 : 15;
     }
     std ::cerr << "Goal is :" << "( " << x_coordinate << "," << y_coordinate << " )" << "\n";
-    Simulator::setColor(x_coordinate, y_coordinate, 'G');
+    Simulator::setColor(x_coordinate, y_coordinate, 'R');
     Simulator::setText(x_coordinate, y_coordinate, "G");    
     goal.first = x_coordinate;
     goal.second = y_coordinate;
@@ -548,7 +548,11 @@ void rwa2group8::algorithm::run_left()
 {
     init_outer_walls();
     generate_goal();
-    follow_wall_left();    
+    follow_wall_left(); 
+    std :: cerr << "Goal reached" << std :: endl;  
+    Simulator::clearAllColor();
+    Simulator::clearText(goal.first, goal.second);
+    Simulator::ackReset();
 }
 
 //Method to set the outer walls, generate the goal and follow right handed approach 
@@ -557,6 +561,10 @@ void rwa2group8::algorithm::run_right()
     init_outer_walls();
     generate_goal();
     follow_wall_right();
+    std :: cerr << "Goal reached" << std :: endl;  
+    Simulator::clearAllColor();
+    Simulator::clearText(goal.first, goal.second);
+    Simulator::ackReset();
     
 }
 
