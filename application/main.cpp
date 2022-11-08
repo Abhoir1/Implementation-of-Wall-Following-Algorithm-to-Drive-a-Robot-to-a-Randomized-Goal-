@@ -32,13 +32,13 @@ int main(int argc, char *argv[])
         std::cerr << "Left Handed Algorithm Initiated"<<std::endl;
         rwa2group8::algorithm obj;
         obj.run_left();
-        std :: cerr << "Goal reached" << std :: endl;
+        
         }
         else{
         std::cerr << "Right Handed Algorithm Initiated"<<std::endl;
         rwa2group8::algorithm obj;
         obj.run_right();
-        std :: cerr << "Goal reached" << std :: endl;
+       
         }
     }
     else {std::cerr << "Please enter value for algorithm"<<std::endl;}
